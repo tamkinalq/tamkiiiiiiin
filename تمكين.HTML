@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>أزرار التواصل - قناة تمكين</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700&display=swap');
+        
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background: linear-gradient(135deg, #f0f4ff 0%, #e6f0ff 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-circle {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            font-weight: 700;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .btn-circle:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        
+        .btn-circle::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 50%);
+            border-radius: 50%;
+        }
+        
+        .btn-circle i {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-circle:hover i {
+            transform: scale(1.2);
+        }
+        
+        .btn-circle span {
+            font-size: 0.9rem;
+            padding: 0 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .btn-whatsapp {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+        }
+        
+        .btn-channel {
+            background: linear-gradient(135deg, #833ab4 0%, #fd1d1d 50%, #fcb045 100%);
+            animation: pulse 2s infinite;
+        }
+        
+        .btn-council {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+        
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .title {
+            color: #2d3748;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 0;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #25D366, #833ab4, #11998e);
+            border-radius: 2px;
+            animation: expand 0.8s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes expand {
+            from { width: 0; }
+            to { width: 50%; }
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .badge {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            background: #ff4757;
+            color: white;
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        @media (max-width: 768px) {
+            .btn-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-circle {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">تواصل مع قناة تمكين على الواتساب</h1>
+        
+        <div class="btn-container">
+            <a href="https://wa.me/966500000000" class="btn-circle btn-whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>الدعم الفني على الواتساب</span>
+            </a>
+            
+            <a href="https://whatsapp.com/channel/0029Vb0YVpQ77qVXAnqPvT32" class="btn-circle btn-channel relative">
+                <div class="badge">جديد</div>
+                <i class="fab fa-whatsapp"></i>
+                <span>قناة تمكين الرسمية</span>
+            </a>
+            
+            <a href="https://example.com/council" class="btn-circle btn-council">
+                <i class="fas fa-landmark"></i>
+                <span>مجلس القيصوم</span>
+            </a>
+        </div>
+        
+        <div class="mt-10 bg-blue-50 p-4 rounded-lg border border-blue-100">
+            <h3 class="text-blue-800 font-bold mb-2">لماذا تنضم إلى قناتنا على الواتساب؟</h3>
+            <ul class="text-right text-gray-700 space-y-2">
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>أحدث الأخبار والتحديثات أولاً بأول</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>إشعارات فورية بكل جديد</span>
+                </li>
+                <li class="flex items-start">
+                    <i class="fas fa-check-circle text-green-500 mt-1 mr-2"></i>
+                    <span>محتوى حصري لأعضاء القناة فقط</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add animation on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const circles = document.querySelectorAll('.btn-circle');
+            
+            circles.forEach((circle, index) => {
+                setTimeout(() => {
+                    circle.style.opacity = '1';
+                    circle.style.transform = 'translateY(0)';
+                }, index * 200);
+                
+                // Initial state for animation
+                circle.style.opacity = '0';
+                circle.style.transform = 'translateY(20px)';
+            });
+            
+            // Add click animation
+            document.querySelectorAll('.btn-circle').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-10px) scale(1.05)';
+                    }, 200);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
